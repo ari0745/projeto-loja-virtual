@@ -54,21 +54,38 @@ programa {
     escreva("Escolha uma opçao: ")
 
     leia(opcao_menu_principal)
+    
+    //
 
     caso 1:
     limpa()
-    escreva("1. Camisa Esportiva (Estoque: ", estoque_prod1, ")- R$ ", preco_prod1")
-       escreva("2. bone casual (Estoque: ", estoque_prod2, ") - R$ ", preco_prod2")
+     escreva(" --- CATÁLOGO DE PRODUTOS ---")
+       escreva("1. Camisa Esportiva (Estoque:", estoque_prod1,")- R$"preco")
+       escreva("2. Boné casual (Estoque: ", estoque_prod2,")- R$ ", preco")
+       escreva("3. Tênis de Corrida (Estoque: ", estoque_prod3,")- R$ ", preco")")
+       escreva("Escreva o produto que deseja adicionar:")
+       leia(opcao_crud == 1)
 
-     escreva("3. tenis de corrida  (Estoque: ", estoque_prod3, ") - R$ ", preco_prod3")
+       se (opcao_crud == 1)
+       { 
+      se (quandidade_temp > 0 e quantidade_temp <= estoque_prod1){ 
 
-     escreva("digite a quantidade desejada: ")
-     leia(quantidade_temp)
+     }senao {
 
-     se (opcao_crud == 1){
-     
-     se (quantidade_temp > 0 e quantidade_temp <= estoque_prod1)
+     escreva("Produro invalido1! ")
 
+   }
+       escreva("Pressione ENTER para voltar ao menu...")
+         leia(tecla_pausa)
+       pare
+
+
+       // ================================================
+       // R -READ (Visualizar o Carrinho)
+       // ================================================
+       caso 2:
+          limpa()
+          escreva("--- MEU CARRINHO DE COMPRAS ---")
     {
 
     }
