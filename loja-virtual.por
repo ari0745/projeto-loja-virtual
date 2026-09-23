@@ -99,7 +99,7 @@ Pressione ENTER para voltar ao menu...")
 
   caso 3:
   limpa()
-  escreva ("- ALTERAR QUANTIDADE NO CARRINHO ---
+  escreva ("- ALTERAR QUANTIDADE NO CARRINHO ---)
 
   escreva ("1. Camisa Esportiva (No carrinho: ", qtd_carrinho_prod1, ")
 
@@ -111,16 +111,20 @@ Pressione ENTER para voltar ao menu...")
    leia(tecla_pausa)
    pare
 
-   caso 0:
-       limpa()
-       escreva("Encerrando seleção de itens e indo para o pagamento...")
-       pare
-   caso contrario:
-       limpa()
-       escreva("Opção inválida! Escolha uma das opções o menu.")
-       escreva("Pressione ENTER para continuar...")
+     escreva("Quantidade inválida ou acima do estoque disponível!\n")
+    }
+} senao {
+    escreva("Opção inválida!\n")
+}
 
+escreva("Pressione ENTER para voltar ao menu...")
+leia(tecla_pausa)
+pare
 
+// =========================================================
+// D - DELETE (Remover Item do Carrinho)
+// =========================================================
+caso 4:
 
 
 
