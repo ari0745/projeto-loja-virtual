@@ -86,9 +86,9 @@ programa {
   // ================================================
   // R -READ (Visualizar o Carrinho)
   // ================================================
-       caso 2:
-          limpa()
-          escreva("--- MEU CARRINHO DE COMPRAS ---")
+  caso 2:
+  limpa()
+  escreva("--- MEU CARRINHO DE COMPRAS ---")
   }
    escreva("Pressione ENTER para voltar ao menu...")
   leia(tecla_pausa)
@@ -99,49 +99,68 @@ programa {
 
   caso 3:
   limpa()
-  escreva ("- ALTERAR QUANTIDADE NO CARRINHO ---")
+    escreva ("- ALTERAR QUANTIDADE NO CARRINHO ---")
+    escreva ("1. Camisa Esportiva (No carrinho: ", qtd_carrinho_prod1, "")
+    escreva ("2. Boné Casual (No carrinho: ", qtd_carrinho_prod2, "") 
+    escreva ("3. Tênis de Corrida (No carrinho: ", qtd_carrinho_prod3, "")
+    escreva("Pressione ENTER para voltar ao menu...")
+    leia(tecla_pausa)
+  pare
 
-  escreva ("1. Camisa Esportiva (No carrinho: ", qtd_carrinho_prod1, "")
-
-  escreva ("2. Boné Casual (No carrinho: ", qtd_carrinho_prod2, "") 
-
-  escreva ("3. Tênis de Corrida (No carrinho: ", qtd_carrinho_prod3, "")
+  escreva("Quantidade inválida ou acima do estoque disponível!\n")
+  }
+  } senao {
+  escreva("Opção inválida!\n")
+  }
 
   escreva("Pressione ENTER para voltar ao menu...")
   leia(tecla_pausa)
   pare
 
-  escreva("Quantidade inválida ou acima do estoque disponível!\n")
-  }
-} senao {
-  escreva("Opção inválida!\n")
-}
+  // =========================================================
+  // D - DELETE (Remover Item do Carrinho)
+  // =========================================================
+  caso 4:
+  limpa()
+  escreva("---REMOVER ITEM DO CARRINHO---")
 
-escreva("Pressione ENTER para voltar ao menu...")
-leia(tecla_pausa)
-pare
+  escreva("1. camisa esportiva (no carrinho: ", qtd_carrinho_prod1, ")")
+    
+  escreva("2. bone casual (no carrnho: ", qtd_carrinho_prod2, ")")
 
-// =========================================================
-// D - DELETE (Remover Item do Carrinho)
-// =========================================================
-caso 4:
- limpa()
-escreva("---REMOVER ITEM DO CARRINHO---")
+  escreva("3. tenis de corrida (no carrinho: ", qtd_carrinho_prod3, ")")
 
-escreva("1. camisa esportiva (no carrinho: ", qtd_carrinho_prod1, ")")
-  
-escreva("2. bone casual (no carrnho: ", qtd_carrinho_prod2, ")")
+  escreva("escolha o item que deseja remover totalmente: ")
+  leia(opcao_crud)
 
-escreva("3. tenis de corrida (no carrinho: ", qtd_carrinho_prod3, ")")
-
-escreva("escolha o item que deseja remover totalmente: ")
-leia(opcao_crud)
-
-se (opcao_crud == 1) {
+  se (opcao_crud == 1) {
 
   estoque_prod1 = estoque_prod1 + qtd_carrinho_prod1
   qtd_carrinho_prod1 = 0
-  escreva("camisa esportiva removida do carrinho!")
+
+  ' escreva("camisa esportiva removida do carrinho!")
+
+  senao se (opcao_crud == 2) {
+
+    estoque_prod2 = estoque_prod2 + qtd_carrinho_prod2
+
+    qtd_carrinho_prod2 = 0
+
+    escreva("Boné Casual removido do carrinho!")
+  }
+  senao se (opcao_crud == 3) {
+
+    estoque_prod3 = estoque_prod3 + qtd_carrinho_prod3
+
+    qtd_carrinho_prod3 = 0
+
+    escreva("Tênis de Corrida removido do carrinho!")
+  }
+  senao {
+    escreva("Opcao invalida!")
+  }
+
+
   }
 
 
