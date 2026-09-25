@@ -158,6 +158,23 @@ programa {
   }
   senao {
     escreva("Opcao invalida!")
+
+    escreva("Pressione ENTER para voltar ao menu...")
+    leia(tecla_pausa)
+    pare 
+
+    caso 0:
+    limpa()
+    escreva("Encerrando seleção de intens e indo para o pagamento...")
+    pare
+    caso contrario:
+    limpa()
+    escreva("opção inválida! escolha uma das opções do menu.")
+    escreva("presione ENTER para continuar...")
+  }
+
+
+
   }
 
 
